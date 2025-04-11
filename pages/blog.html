@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Fitness - Vital Gym</title>
+  <link rel="stylesheet" href="../styles/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="mega-menu">
+      <div class="logo">
+        <svg class="logo-svg" viewBox="0 0 100 100" width="40" height="40" aria-label="Logo">
+          <img src="/resources/logo.svg" class="logo-svg" alt="Logo" />
+        </svg>
+        CC's Gym
+      </div>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="/pages/clases.html">Clases</a></li>
+        <li><a href="/pages/entrenadores.html">Entrenadores</a></li>
+        <li><a href="/pages/precios.html">Precios</a></li>
+        <li><a href="/pages/formulario.html">Contacto</a></li>
+        <li><a href="/pages/blog.html" class="activo">Blog</a></li>
+      </ul>
+      <button id="modoOscuroBtn">🌙</button>
+    </nav>
+  </header>
+
+  <main class="blog-container">
+    <h2>Blog de Fitness</h2>
+    <input type="radio" name="categoria" id="todo" checked>
+    <input type="radio" name="categoria" id="nutricion">
+    <input type="radio" name="categoria" id="rutinas">
+    <input type="radio" name="categoria" id="bienestar">
+    <div class="filtros-blog">
+      <label for="todo">Todos</label>
+      <label for="nutricion">Nutrición</label>
+      <label for="rutinas">Rutinas</label>
+      <label for="bienestar">Bienestar</label>
+    </div>
+  
+    <div class="grid-blog">
+      <div class="articulo nutricion">
+        <h3>¿Qué comer antes de entrenar?</h3>
+        <p>Consejos simples para mejorar tu energía y rendimiento físico.</p>
+        <span class="tag">Nutrición</span>
+      </div>
+  
+      <div class="articulo rutinas">
+        <h3>Rutina express de 20 minutos</h3>
+        <p>Entrenamiento para activar todo el cuerpo con poco tiempo.</p>
+        <span class="tag">Rutinas</span>
+      </div>
+  
+      <div class="articulo bienestar">
+        <h3>Cómo dormir mejor después del gimnasio</h3>
+        <p>Mejorá tu descanso para una mejor recuperación física y mental.</p>
+        <span class="tag">Bienestar</span>
+      </div>
+  
+      <div class="articulo nutricion">
+        <h3>Hidratación inteligente</h3>
+        <p>Todo lo que necesitás saber sobre el agua y los electrolitos.</p>
+        <span class="tag">Nutrición</span>
+      </div>
+  
+      <div class="articulo rutinas">
+        <h3>CrossFit para principiantes</h3>
+        <p>Tips para empezar sin miedo ni lesiones.</p>
+        <span class="tag">Rutinas</span>
+      </div>
+  
+      <div class="articulo bienestar">
+        <h3>Respiración consciente</h3>
+        <p>Aprendé a controlar tu estrés a través del cuerpo.</p>
+        <span class="tag">Bienestar</span>
+      </div>
+      <div class="articulo rutinas">
+        <h3>Entrenamiento con peso corporal</h3>
+        <p>Ideal para entrenar en casa sin necesidad de equipamiento. Fortalecé brazos, piernas y core.</p>
+        <span class="tag">Rutinas</span>
+      </div>
+      <div class="articulo nutricion">
+        <h3>Snacks saludables post-entreno</h3>
+        <p>Opciones rápidas y nutritivas para recuperar energía después del gimnasio.</p>
+        <span class="tag">Nutrición</span>
+      </div> 
+    </div>
+  
+    <section class="comentarios">
+      <h3>Comentarios</h3>
+  
+      <div class="comentario">
+        <div class="avatar"></div>
+        <div class="contenido-comentario">
+          <strong>Luis:</strong>
+          <p>Me encantó la rutina express, ¡la estoy usando todos los días!</p>
+        </div>
+      </div>
+  
+      <div class="comentario">
+        <div class="avatar"></div>
+        <div class="contenido-comentario">
+          <strong>Rocío:</strong>
+          <p>¿Podrían publicar más artículos sobre nutrición vegana?</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p style="text-align:center;">© 2025 CC's Gym - Universidad Nacional de Jujuy</p>
+  </footer>
+
+  <script>
+    document.getElementById("modoOscuroBtn").addEventListener("click", () => {
+      document.body.classList.toggle("modo-oscuro");
+    });
+
+    const articulos = document.querySelectorAll(".articulo");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal");
+    } else {
+      entry.target.classList.remove("reveal");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+articulos.forEach(articulo => observer.observe(articulo));
+  </script>
+</body>
+</html>

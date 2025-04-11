@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Precios - Vital Gym</title>
+  <link rel="stylesheet" href="../styles/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="mega-menu">
+      <div class="logo">
+        <svg class="logo-svg" viewBox="0 0 100 100" width="40" height="40" aria-label="Logo">
+          <img src="/resources/logo.svg" class="logo-svg" alt="Logo" />
+        </svg>
+        CC's Gym
+      </div>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="/pages/clases.html">Clases</a></li>
+        <li><a href="/pages/entrenadores.html">Entrenadores</a></li>
+        <li><a href="/pages/precios.html">Precios</a></li>
+        <li><a href="/pages/formulario.html">Contacto</a></li>
+        <li><a href="/pages/blog.html" class="activo">Blog</a></li>
+      </ul>
+      <button id="modoOscuroBtn">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="precios">
+      <h2>Planes de Membresía</h2>
+
+      <input type="checkbox" id="switch-plan" hidden>
+      <div class="toggle-precios">
+        <label for="switch-plan" class="etiqueta-toggle">
+          <span class="opcion">Mensual</span>
+          <span class="switch"></span>
+          <span class="opcion">Anual</span>
+        </label>
+      </div>
+
+      <!-- Tabla de precios -->
+      <div class="tabla-planes">
+        <div class="plan">
+          <h3>Básico</h3>
+          <p class="precio mensual">$4.000</p>
+          <p class="precio anual">$40.000</p>
+          <ul>
+            <li>✔ Acceso a sala de musculación</li>
+            <li>✖ Sin acceso a clases premium</li>
+            <li class="tooltip">❓ 1 clase semanal
+              <span class="tooltip-text">Una clase grupal a elección por semana.</span>
+            </li>
+          </ul>
+          <button>Elegir Plan</button>
+        </div>
+
+        <div class="plan destacado">
+          <h3>Full</h3>
+          <p class="precio mensual">$7.500</p>
+          <p class="precio anual">$75.000</p>
+          <ul>
+            <li>✔ Acceso completo al gimnasio</li>
+            <li>✔ 3 clases semanales</li>
+            <li class="tooltip">❓ Clases premium incluidas
+              <span class="tooltip-text">Incluye Yoga, CrossFit, Funcional, etc.</span>
+            </li>
+          </ul>
+          <button>Elegir Plan</button>
+        </div>
+
+        <div class="plan">
+          <h3>Personalizado</h3>
+          <p class="precio mensual">$12.000</p>
+          <p class="precio anual">$120.000</p>
+          <ul>
+            <li>✔ Acceso a todas las clases</li>
+            <li>✔ Nutricionista y seguimiento mensual</li>
+            <li class="tooltip">❓ Entrenamiento 1 a 1
+                <span class="tooltip-text">Con un entrenador personalizado</span>
+              </li>
+          </ul>
+          <button>Elegir Plan</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p style="text-align:center;">© 2025 CC's Gym - Universidad Nacional de Jujuy</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("modoOscuroBtn");
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("modo-oscuro");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto - Vital Gym</title>
+  <link rel="stylesheet" href="../styles/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="mega-menu">
+      <div class="logo">
+        <svg class="logo-svg" viewBox="0 0 100 100" width="40" height="40" aria-label="Logo">
+          <img src="/resources/logo.svg" class="logo-svg" alt="Logo" />
+        </svg>
+        CC's Gym
+      </div>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="/pages/clases.html">Clases</a></li>
+        <li><a href="/pages/entrenadores.html">Entrenadores</a></li>
+        <li><a href="/pages/precios.html">Precios</a></li>
+        <li><a href="/pages/formulario.html">Contacto</a></li>
+        <li><a href="/pages/blog.html" class="activo">Blog</a></li>
+      </ul>
+      <button id="modoOscuroBtn">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contacto">
+      <h2>Contactanos</h2>
+
+      <form class="formulario-contacto" action="#enviado">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required minlength="3" placeholder="Tu nombre" />
+        </div>
+
+        <div class="campo">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com" />
+        </div>
+
+        <div class="campo">
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" name="asunto" required placeholder="Consulta, sugerencia, etc." />
+        </div>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribí tu mensaje..."></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+
+        <div class="spinner"></div>
+      </form>
+    </section>
+  </main>
+
+  <div id="enviado" class="modal">
+    <div class="modal-contenido">
+      <h3>¡Gracias por tu mensaje! 📨</h3>
+      <p>Nos pondremos en contacto con vos lo antes posible.</p>
+      <a href="contacto.html" class="boton-modal">Cerrar</a>
+    </div>
+  </div>
+
+  <footer>
+    <p style="text-align:center;">© 2025 CC's Gym - Universidad Nacional de Jujuy</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("modoOscuroBtn");
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("modo-oscuro");
+    });
+  </script>
+
+</body>
+</html>

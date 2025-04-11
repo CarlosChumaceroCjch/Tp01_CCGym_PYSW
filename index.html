@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gimnasio Vital</title>
+  <link rel="stylesheet" href="styles/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="mega-menu">
+      <div class="logo">
+        <svg class="logo-svg" viewBox="0 0 100 100" width="40" height="40" aria-label="Logo">
+          <img src="/resources/logo.svg" class="logo-svg" alt="Logo" />
+        </svg>
+        CC's Gym
+      </div>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="/pages/clases.html">Clases</a></li>
+        <li><a href="/pages/entrenadores.html">Entrenadores</a></li>
+        <li><a href="/pages/precios.html">Precios</a></li>
+        <li><a href="/pages/formulario.html">Contacto</a></li>
+        <li><a href="/pages/blog.html" class="activo">Blog</a></li>
+      </ul>
+      <button id="modoOscuroBtn">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="video-yt">
+        <iframe src="https://www.youtube.com/embed/e_NaHaQkqp0?autoplay=1&mute=1&loop=1&playlist=e_NaHaQkqp0&controls=0&showinfo=0&modestbranding=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        title="Video de motivación"></iframe>
+    </div>
+    <div class="overlay-text">
+      <h1>¡Ponete en forma con Vital Gym!</h1>
+    </div>
+  </section>
+
+  <section class="clases-destacadas">
+    <h2>Clases Destacadas</h2>
+    <div class="tarjetas">
+      <a href="pages/clases.html#yoga" class="card">🧘‍♀️ Yoga</a>
+      <a href="pages/clases.html#funcional" class="card">🔥 Funcional</a>
+      <a href="pages/clases.html#crossfit" class="card">💪 CrossFit</a>
+    </div>
+  </section>
+
+  <section class="contador">
+    <div class="numero">
+      <span class="num" data-inicio="500" data-final="1000">500</span>
+      <p>Socios Satisfechos</p>
+    </div>
+  </section>
+  
+
+  <section class="tarjetas-testimonios">
+    <h2 class="title">Lo que dicen de nosotros</h2>
+
+  <div class="carrusel-manual">
+    <input type="radio" name="testi" id="t1" checked>
+    <input type="radio" name="testi" id="t2">
+    <input type="radio" name="testi" id="t3">
+
+    <div class="carrusel-manual">
+        <div class="tarjetas-testimonios-container">
+            <div class="tarjeta">
+               <div class="contenido-tarjeta">
+                <p>“¡Vital Gym me cambió la vida!”</p>
+                <span>- Ana</span>
+               </div> 
+            </div>
+            <div class="tarjeta">
+                <div class="contenido-tarjeta">
+                    <p>“Excelente atención y entrenadores.”</p>
+                    <span>- Pedro</span>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenido-tarjeta">
+                    <p>“Las clases son divertidas y efectivas.”</p>
+                    <span>- Carla</span>
+                </div>
+            </div>
+          </div>
+    </div>
+  </div>
+  </section>
+  <footer>
+    <div class="mapa">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3%2C-24.2%2C-65.2%2C-24.1"
+              title="Mapa del gimnasio" aria-label="Mapa del gimnasio"></iframe>
+    </div>
+  
+    <div class="info-gimnasio">
+      <h4>CC's Gym</h4>
+      <p>Gimnasio integral en San Salvador de Jujuy.</p>
+      <p>📍 Dirección: Av. Ejemplo 123</p>
+      <p>📞 Teléfono: +54 388 555555</p>
+      <p>✉️ Email: cc_gym@gmail.com</p>
+    </div>
+  
+    <form class="newsletter" aria-label="Formulario de newsletter">
+      <label for="email">Suscribite al newsletter:</label>
+      <input type="email" id="email" name="email" placeholder="Tu correo" required />
+      <button type="submit">Suscribirme</button>
+      <div class="redes">
+        <a href="#" aria-label="Instagram"><img src="icono-instagram.svg" alt="Instagram" /></a>
+        <a href="#" aria-label="Facebook"><img src="icono-facebook.svg" alt="Facebook" /></a>
+      </div>
+    </form>
+  </footer>
+  <script>
+    const btn = document.getElementById("modoOscuroBtn");
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("modo-oscuro");
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const num = document.querySelector(".num");
+    const inicio = +num.getAttribute("data-inicio");
+    const final = +num.getAttribute("data-final");
+    let count = inicio;
+
+    const delay = 1000;
+    const step = 7;
+
+    const interval = setInterval(() => {
+      if (count < final) {
+        count += step;
+        num.textContent = count + "+";
+      } else {
+        clearInterval(interval);
+        num.textContent = final + "+";
+      }
+    }, delay);
+  });
+  </script>
+</body>
+</html>

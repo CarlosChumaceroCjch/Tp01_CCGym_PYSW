@@ -1,0 +1,1250 @@
+:root {
+    --color-fondo: #ffffff;
+    --color-texto: #222222;
+    --color-principal: #e63946;
+    --color-secundario: #f1faee;
+    --color-hover: #a8dadc;
+    --color-focus: #1d3557;
+    --color-oscuro: #1a1a1a;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    scroll-snap-type: y mandatory;
+  }
+  
+  /* Header Menú */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: -10px;
+  }
+  .logo img, .logo-svg {
+    animation: latido 2s infinite;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    height: auto;
+  }
+
+  @keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  header {
+    background-color: var(--color-principal);
+    padding: 1rem;
+    color: white;
+  }
+  
+  nav.mega-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+  }
+  
+  .menu li {
+    position: relative;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .dropdown:hover .submenu {
+    display: block;
+  }
+  /* Hero con video */
+  .hero {
+    position: relative;
+    height: 70vh;
+    scroll-snap-align: start;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--color-fondo);
+    clip-path: polygon(0 80%, 20% 100%, 50% 90%, 80% 100%, 100% 80%, 100% 100%, 0 100%);
+    z-index: 2;
+  }
+  
+  .video-yt {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .video-yt iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  
+  .overlay-text {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    animation: entradaTexto 2s ease-out forwards;
+  }
+  
+  @keyframes entradaTexto {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  footer {
+    background: var(--color-principal);
+    color: white;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    font-size: 0.95rem;
+  }
+  footer .mapa iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  footer .info-gimnasio {
+    line-height: 1.6;
+  }
+  
+  footer .info-gimnasio h4 {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  footer .info-gimnasio p {
+    margin: 0.4rem 0;
+  }
+  
+  footer .newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  footer .newsletter label {
+    font-weight: bold;
+    color: white;
+  }
+  
+  footer .newsletter input,
+  footer .newsletter button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  
+  footer .newsletter input {
+    background-color: white;
+    color: black;
+  }
+  
+  footer .newsletter button {
+    background-color: var(--color-hover);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  footer .newsletter button:hover {
+    background-color: var(--color-focus);
+    color: white;
+  }
+  
+  footer .redes {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  footer .redes img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  @media (max-width: 768px) {
+    footer {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    footer .redes {
+      justify-content: center;
+    }
+  
+    footer .newsletter {
+      align-items: center;
+    }
+  
+    footer .mapa iframe {
+      height: 180px;
+    }
+  }
+  /* Tarjetas de clases */
+  .clases-destacadas {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .card {
+    background: var(--color-secundario);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    background-color: var(--color-hover);
+    opacity: 0.8;
+  }
+  
+  /* Contador animado */
+  .contador {
+    background: var(--color-hover);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .num {
+    font-size: 3rem;
+    animation: subir 1s infinite alternate ease-in-out;
+  }
+  
+  @keyframes subir {
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
+  }
+  
+  /* Testimonios */
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 0;
+  }  
+  .carrusel-manual {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  
+  .tarjetas-testimonios-container {
+    display: flex;
+    width: 300%;
+    animation: autoCarrusel 15s infinite;
+  }
+  
+  @keyframes autoCarrusel {
+    0%, 10% {
+      transform: translateX(0%);
+    }
+    33.33%, 43.33% {
+      transform: translateX(-33.333%);
+    }
+    66.66%, 76.66% {
+      transform: translateX(-66.666%);
+    }
+    76.67%, 100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  .tarjeta {
+    flex: 0 0 33.3333%;
+    box-sizing: border-box;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+  .contenido-tarjeta {
+    width: 80%;
+    max-width: 500px;
+    background: #fefefe;
+    border: 2px solid var(--color-principal);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-style: italic;
+    color: var(--color-texto);
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+  }
+  
+  .tarjeta span {
+    margin-top: 1rem;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--color-principal);
+  }  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  #t1:checked ~ .tarjetas-testimonios-container {
+    transform: translateX(0%);
+  }
+  #t2:checked ~ .tarjetas-testimonios-container {
+    transform: translateX(-100%);
+  }
+  #t3:checked ~ .tarjetas-testimonios-container {
+    transform: translateX(-200%);
+  }
+  
+  /* Footer */
+  footer {
+    background: var(--color-principal);
+    color: white;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .newsletter input,
+  .newsletter button {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: none;
+  }
+  
+  .newsletter button {
+    background-color: var(--color-hover);
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .newsletter button:hover {
+    background-color: var(--color-focus);
+    color: white;
+  }
+  
+  .redes img {
+    width: 30px;
+    margin-right: 1rem;
+  }
+  
+  .mapa iframe {
+    width: 100%;
+    height: 150px;
+    border: none;
+  }
+  
+  /* Modo Oscuro */
+  body.modo-oscuro {
+    --color-fondo: #121212;
+    --color-texto: #eeeeee;
+    --color-secundario: #1e1e1e;
+    --color-hover: #333;
+  }
+  body.modo-oscuro .tarjeta {
+    background: #1e1e1e;
+    color: var(--color-texto);
+    border-color: var(--color-principal);
+  }
+  body.modo-oscuro .tarjeta::before,
+  body.modo-oscuro .tarjeta span {
+  color: var(--color-principal);
+}   
+body.modo-oscuro .contenido-tarjeta {
+  background: #3d3c3c;
+  color: var(--color-texto);
+  border-color: var(--color-principal);
+}
+  #modoOscuroBtn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  /* Accesibilidad */
+  a:focus, button:focus, input:focus {
+    outline: 3px dashed var(--color-focus);
+    outline-offset: 4px;
+  }
+
+  /*Clases*/
+  .galeria-masonry {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .grid-masonry {
+    column-count: 3;
+    column-gap: 1rem;
+  }
+  
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  .masonry-item:hover img {
+    transform: scale(1.05);
+  }
+  @media (max-width: 768px) {
+    .grid-masonry {
+      column-count: 2;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .grid-masonry {
+      column-count: 1;
+    }
+  }
+  input.filtros {
+    display: none;
+  }
+  
+  label.filtros {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    margin: 0.2rem;
+    border: 2px solid var(--color-principal);
+    border-radius: 20px;
+    background-color: white;
+    color: var(--color-principal);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  
+  input.filtros:checked + label.filtros {
+    background-color: var(--color-principal);
+    color: white;
+  }
+  
+  section.clases {
+    text-align: center;
+  }
+  .filtros-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    max-width: 800px;
+  }
+
+  .clases #todos:checked ~ .galeria-masonry .masonry-item {
+    display: block;
+  }
+  
+  .clases #musculacion:checked ~ .galeria-masonry .masonry-item:not(.musculacion),
+  .clases #crossfit:checked ~ .galeria-masonry .masonry-item:not(.crossfit),
+  .clases #yoga:checked ~ .galeria-masonry .masonry-item:not(.yoga),
+  .clases #funcional:checked ~ .galeria-masonry .masonry-item:not(.funcional) {
+    display: none;
+  }
+  
+  /*Tarjetas con info*/
+
+  .tarjetas-clases {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .tarjeta-clase {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease;
+  }
+  
+  .tarjeta-clase img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .tarjeta-clase:hover img {
+    transform: scale(1.1);
+    filter: brightness(60%);
+  }
+  
+  .contenido-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    color: white;
+    text-align: left;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .tarjeta-clase:hover .contenido-overlay {
+    opacity: 1;
+  }
+  
+  .contenido-overlay h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--color-principal);
+  }
+  
+  .contenido-overlay p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  /*Horarios*/
+
+  .tabla-horarios-filtrada {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .tabla-horarios-filtrada h2 {
+    margin-bottom: 1rem;
+    color: var(--color-principal);
+  }
+  
+  .tabla-scroll {
+    overflow-x: auto;
+    border-radius: 10px;
+  }
+  
+  .tabla-scroll table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+  }
+  
+  .tabla-scroll th,
+  .tabla-scroll td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--color-hover);
+  }
+  
+  .tabla-scroll th {
+    background-color: var(--color-principal);
+    color: white;
+  }
+  
+  .tabla-scroll td {
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+  }
+  
+  /* 🌙 Modo oscuro tabla */
+  body.modo-oscuro .tabla-scroll th {
+    background-color: var(--color-principal);
+    color: white;
+  }
+  
+  body.modo-oscuro .tabla-scroll td {
+    background-color: #1e1e1e;
+    color: var(--color-texto);
+  }
+  
+  #musculacion:checked ~ .tabla-horarios-filtrada tbody tr:not(.musculacion),
+  #crossfit:checked ~ .tabla-horarios-filtrada tbody tr:not(.crossfit),
+  #yoga:checked ~ .tabla-horarios-filtrada tbody tr:not(.yoga),
+  #funcional:checked ~ .tabla-horarios-filtrada tbody tr:not(.funcional) {
+  display: none;
+}
+
+
+/* Entrenadores*/
+.entrenadores {
+  padding: 2rem;
+  text-align: center;
+}
+
+.contenedor-entrenadores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tarjeta-flip {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.tarjeta-flip:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #f6fff6;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  overflow: visible;
+}
+
+.flip-front img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+.habilidades {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+}
+.fila-habilidad {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fila-habilidad span {
+  flex: 1;
+  text-align: left;
+}
+
+
+.fila-barra {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  gap: 0.5rem;
+}
+
+.barra {
+  background-color: #ddd;
+  border-radius: 10px;
+  height: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progreso {
+  height: 100%;
+  width: 0;
+  background-color: var(--color-principal);
+  border-radius: 10px;
+  animation: animarBarra 2s forwards;
+}
+
+@keyframes animarBarra {
+  from { width: 0; }
+  to { width: var(--porcentaje); }
+}
+
+.fuerza-laura { --porcentaje: 60%; }
+.flexibilidad-laura { --porcentaje: 90%; }
+.resistencia-laura { --porcentaje: 50%; }
+
+.fuerza-matias { --porcentaje: 90%; }
+.flexibilidad-matias { --porcentaje: 30%; }
+.resistencia-matias { --porcentaje: 70%; }
+
+.fuerza-abril { --porcentaje: 70%; }
+.flexibilidad-abril { --porcentaje: 50%; }
+.resistencia-abril { --porcentaje: 90%; }
+.rating {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-bottom: 0.5rem;
+  justify-content: center;
+}
+
+.estrella {
+  font-size: 1.5rem;
+  color: #ccc;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.estrella::before {
+  content: "★";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.estrella.activa::before {
+  color: gold;
+  animation: brillar 0.6s ease;
+}
+
+@keyframes brillar {
+  0% { transform: scale(0.6); opacity: 0.2; }
+  100% { transform: scale(1); opacity: 1; }
+}
+body.modo-oscuro .flip-front,
+body.modo-oscuro .flip-back {
+  background-color: #1e1e1e; /* Fondo oscuro */
+  color: white; /* Texto visible */
+}
+/*Formulario*/
+.contacto {
+  padding: 2rem;
+  text-align: center;
+}
+
+.formulario-contacto {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.campo label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--color-principal);
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.8rem;
+  border: 2px solid var(--color-hover);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+}
+
+.campo input:valid,
+.campo textarea:valid {
+  border-color: green;
+}
+
+.campo input:invalid:focus,
+.campo textarea:invalid:focus {
+  border-color: red;
+}
+
+.formulario-contacto button {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-principal);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario-contacto button:hover {
+  background-color: var(--color-hover);
+}
+
+/* Modo oscuro */
+body.modo-oscuro .campo input,
+body.modo-oscuro .campo textarea {
+  background-color: #1e1e1e;
+  color: var(--color-texto);
+  border-color: var(--color-hover);
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid var(--color-hover);
+  border-top: 4px solid var(--color-principal);
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+  margin: 2rem auto 0;
+  display: none;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Simulación: al enviar el formulario muestra el spinner */
+form:valid .spinner {
+  display: block;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal:target {
+  display: flex;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.boton-modal {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-principal);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.boton-modal:hover {
+  background-color: var(--color-hover);
+}
+
+/* Modo oscuro para el modal */
+body.modo-oscuro .modal-contenido {
+  background: #1e1e1e;
+  color: var(--color-texto);
+}
+
+/*Precios*/
+.precios {
+  padding: 2rem;
+  text-align: center;
+}
+
+#switch-plan {
+  display: none;
+}
+
+.toggle-precios {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.etiqueta-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  border: 2px solid var(--color-principal);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  gap: 1rem;
+  position: relative;
+  color: var(--color-principal);
+}
+
+.etiqueta-toggle .opcion {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: var(--color-texto);
+}
+body.modo-oscuro .etiqueta-toggle {
+  background-color: #1e1e1e;
+  border-color: var(--color-hover);
+}
+
+body.modo-oscuro .etiqueta-toggle .opcion {
+  color: white; /* o var(--color-texto) si está clara */
+}
+.switch {
+  width: 40px;
+  height: 20px;
+  background-color: var(--color-principal);
+  border-radius: 30px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s;
+}
+
+#switch-plan:checked ~ .toggle-precios .switch::before {
+  transform: translateX(20px);
+}
+
+/* Tabla de precios */
+.tabla-planes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.plan {
+  background-color: var(--color-secundario);
+  border: 2px solid var(--color-hover);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, border-color 0.3s;
+  position: relative;
+}
+
+.plan:hover {
+  transform: scale(1.03);
+  border-color: var(--color-principal);
+}
+
+.plan h3 {
+  margin-bottom: 1rem;
+  color: var(--color-principal);
+}
+
+.plan .precio {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+#switch-plan:not(:checked) ~ .tabla-planes .precio.mensual {
+  display: block;
+}
+
+#switch-plan:checked ~ .tabla-planes .precio.anual {
+  display: block;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.plan ul li {
+  margin: 0.5rem 0;
+}
+
+.plan button {
+  background: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.plan button:hover {
+  background: var(--color-focus);
+}
+
+/* Plan destacado */
+.plan.destacado {
+  border: 3px solid var(--color-principal);
+  background: var(--color-hover);
+  transform: scale(1.05);
+}
+
+.tooltip {
+  position: relative;
+  cursor: help;
+  text-decoration: underline dotted;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 180px;
+  background-color: var(--color-focus);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 10;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .tabla-planes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/*Blog*/
+.blog-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.blog-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: var(--color-principal);
+}
+input[type="radio"][name="categoria"] {
+  display: none;
+}
+/* Filtros por categoría */
+.filtros-blog {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filtros-blog input[type="radio"] {
+  display: none;
+}
+
+.filtros-blog label {
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--color-principal);
+  border-radius: 20px;
+  background: white;
+  color: var(--color-principal);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+.filtros-blog input[type="radio"]:checked + label {
+  background: var(--color-principal);
+  color: white;
+}
+
+.grid-blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.articulo {
+  background: var(--color-secundario);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.articulo.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.articulo:hover {
+  transform: scale(1.02);
+}
+
+.articulo h3 {
+  color: var(--color-principal);
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.articulo .tag {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.2rem 0.6rem;
+  background-color: var(--color-principal);
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+#todo:checked ~ .filtros-blog label[for="todo"],
+#nutricion:checked ~ .filtros-blog label[for="nutricion"],
+#rutinas:checked ~ .filtros-blog label[for="rutinas"],
+#bienestar:checked ~ .filtros-blog label[for="bienestar"] {
+  background: var(--color-principal);
+  color: white;
+}
+#todo:checked ~ .grid-blog .articulo {
+  display: block;
+}
+#nutricion:checked ~ .grid-blog .articulo:not(.nutricion),
+#rutinas:checked ~ .grid-blog .articulo:not(.rutinas),
+#bienestar:checked ~ .grid-blog .articulo:not(.bienestar) {
+  display: none;
+}
+
+.comentarios {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 2px solid var(--color-hover);
+}
+
+.comentarios h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-principal);
+}
+
+.comentario {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--color-principal);
+  border-radius: 50%;
+  position: relative;
+}
+
+.avatar::after {
+  content: "👤";
+  position: absolute;
+  font-size: 1.6rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.contenido-comentario {
+  background: var(--color-secundario);
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+  .comentario {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contenido-comentario {
+    width: 100%;
+  }
+}

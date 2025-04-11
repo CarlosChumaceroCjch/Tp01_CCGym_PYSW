@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clases - Vital Gym</title>
+  <link rel="stylesheet" href="../styles/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="mega-menu">
+      <div class="logo">
+        <svg class="logo-svg" viewBox="0 0 100 100" width="40" height="40" aria-label="Logo">
+          <img src="/resources/logo.svg" class="logo-svg" alt="Logo" />
+        </svg>
+        CC's Gym
+      </div>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="/pages/clases.html">Clases</a></li>
+        <li><a href="/pages/entrenadores.html">Entrenadores</a></li>
+        <li><a href="/pages/precios.html">Precios</a></li>
+        <li><a href="/pages/formulario.html">Contacto</a></li>
+        <li><a href="/pages/blog.html" class="activo">Blog</a></li>
+      </ul>
+      <button id="modoOscuroBtn">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="clases">
+        <h2>Clases disponibles</h2>
+        <input type="radio" name="filtro" id="todos" class="filtros" checked>
+        <label for="todos" class="filtros">Todos</label>
+
+        <input type="radio" name="filtro" id="musculacion" class="filtros">
+        <label for="musculacion" class="filtros">Musculación</label>
+
+        <input type="radio" name="filtro" id="crossfit" class="filtros">
+        <label for="crossfit" class="filtros">CrossFit</label>
+
+        <input type="radio" name="filtro" id="yoga" class="filtros">
+        <label for="yoga" class="filtros">Yoga</label>
+
+        <input type="radio" name="filtro" id="funcional" class="filtros">
+        <label for="funcional" class="filtros">Spinning</label>
+      
+        <div class="galeria-masonry">
+          <h2>Galería de Clases en Acción</h2>
+          <div class="grid-masonry">
+            <div class="masonry-item musculacion"><img src="../resources/musculacion.jpg" alt="Musculación 1"></div>
+            <div class="masonry-item musculacion"><img src="../resources/musculacion2.jpg" alt="Musculación 2"></div>
+            <div class="masonry-item musculacion"><img src="../resources/musculacion3.jpg" alt="Musculación 3"></div>
+            <div class="masonry-item musculacion"><img src="../resources/musculacion4.jpg" alt="Musculación 4"></div>
+            <div class="masonry-item musculacion"><img src="../resources/musculacion5.jpg" alt="Musculación 5"></div>
+            <div class="masonry-item yoga "><img src="../resources/yoga.jpg" alt="Yoga 1"></div>
+            <div class="masonry-item funcional"><img src="../resources/funcional.jpg" alt="Funcional 1"></div>
+            <div class="masonry-item funcional"><img src="../resources/spinning.jpg" alt="spinning"></div>
+            <div class="masonry-item funcional"><img src="../resources/spinning2.jpg" alt="spinning 2"></div>
+            <div class="masonry-item funcional"><img src="../resources/spinning3.jpg" alt="spinning 3"></div>
+            <div class="masonry-item funcional"><img src="../resources/spinning4.jpg" alt="spinning 4"></div>
+            <div class="masonry-item crossfit"><img src="../resources/crossfit.jpg" alt="CrossFit 1"></div>
+            <div class="masonry-item yoga"><img src="../resources/yoga2.jpg" alt="Yoga 2"></div>
+            <div class="masonry-item yoga"><img src="../resources/yoga3.jpg" alt="Yoga 3"></div>
+            <div class="masonry-item yoga"><img src="../resources/yoga4.jpg" alt="Yoga 4"></div>
+            <div class="masonry-item yoga"><img src="../resources/yoga5.jpg" alt="Yoga 5"></div>
+            <div class="masonry-item crossfit"><img src="../resources/crossfit2.jpg" alt="Crossfit 2"></div>
+            <div class="masonry-item crossfit"><img src="../resources/crossfit3.jpg" alt="Crossfit 3"></div>
+            <div class="masonry-item crossfit"><img src="../resources/crossfit4.jpg" alt="Crossfit 4"></div>
+            <div class="masonry-item crossfit"><img src="../resources/crossfit5.jpg" alt="Crossfit 5"></div>
+          </div>
+        </div>
+        <h2>Horarios Semanales</h2>
+        
+        <div class="tabla-horarios-filtrada">
+          <h2>Horarios por Categoría</h2>
+          <div class="tabla-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Día</th>
+                  <th>Hora</th>
+                  <th>Clase</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="musculacion"><td>Lunes</td><td>10:00</td><td>Musculación</td></tr>
+                <tr class="crossfit"><td>Lunes</td><td>18:00</td><td>CrossFit</td></tr>
+                <tr class="funcional"><td>Lunes</td><td>20:00</td><td>Funcional</td></tr>
+        
+                <tr class="crossfit"><td>Martes</td><td>10:00</td><td>CrossFit</td></tr>
+                <tr class="yoga"><td>Martes</td><td>18:00</td><td>Yoga</td></tr>
+                <tr class="musculacion"><td>Martes</td><td>20:00</td><td>Musculación</td></tr>
+        
+                <tr class="yoga"><td>Miércoles</td><td>08:00</td><td>Yoga</td></tr>
+                <tr class="funcional"><td>Miércoles</td><td>18:00</td><td>Funcional</td></tr>
+                <tr class="crossfit"><td>Miércoles</td><td>20:00</td><td>CrossFit</td></tr>
+        
+                <tr class="musculacion"><td>Jueves</td><td>08:00</td><td>Musculación</td></tr>
+                <tr class="funcional"><td>Jueves</td><td>10:00</td><td>Funcional</td></tr>
+                <tr class="yoga"><td>Jueves</td><td>20:00</td><td>Yoga</td></tr>
+        
+                <tr class="crossfit"><td>Viernes</td><td>10:00</td><td>CrossFit</td></tr>
+                <tr class="yoga"><td>Viernes</td><td>18:00</td><td>Yoga</td></tr>
+                <tr class="funcional"><td>Viernes</td><td>20:00</td><td>Funcional</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="tarjetas-clases">
+        <h2>Nuestras Clases</h2>
+        <div class="grid-tarjetas">
+          
+          <div class="tarjeta-clase">
+            <img src="../resources/musculacion.jpg" alt="Musculación">
+            <div class="contenido-overlay">
+              <h3>Musculación</h3>
+              <p>Entrenamiento de fuerza, tonificación y ganancia muscular.</p>
+            </div>
+          </div>
+      
+          <div class="tarjeta-clase">
+            <img src="../resources/yoga.jpg" alt="Yoga">
+            <div class="contenido-overlay">
+              <h3>Yoga</h3>
+              <p>Relajación, estiramiento y conexión mente-cuerpo.</p>
+            </div>
+          </div>
+      
+          <div class="tarjeta-clase">
+            <img src="../resources/funcional.jpg" alt="Spinning">
+            <div class="contenido-overlay">
+              <h3>Spinning</h3>
+              <p>Ejercicios dinámicos, quema de calorías y coordinación.</p>
+            </div>
+          </div>
+      
+          <div class="tarjeta-clase">
+            <img src="../resources/crossfit.jpg" alt="CrossFit">
+            <div class="contenido-overlay">
+              <h3>CrossFit</h3>
+              <p>Alta intensidad, superación personal y variedad en cada clase.</p>
+            </div>
+          </div>
+      
+        </div>
+      </section>
+  </main>
+
+  <footer>
+    <p style="text-align:center;">© 2025 CC's Gym - Universidad Nacional de Jujuy</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("modoOscuroBtn");
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("modo-oscuro");
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      const radio = document.getElementById(hash);
+      if (radio) radio.checked = true;
+    }
+  });
+  </script>
+</body>
+</html>
