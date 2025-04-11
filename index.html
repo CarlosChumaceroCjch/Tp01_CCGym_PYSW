@@ -11,11 +11,12 @@
   <header>
     <nav class="mega-menu">
       <div class="logo">
-        <svg class="logo-svg" viewBox="0 0 100 100" width="40" height="40" aria-label="Logo">
-          <img src="resources/logo.svg" class="logo-svg" alt="Logo" />
-        </svg>
+        <img src="resources/logo.svg" alt="Logo CC's Gym" class="logo-svg" />
         CC's Gym
       </div>
+  
+      <button class="menu-toggle" aria-label="Abrir menú de navegación">☰</button>
+  
       <ul class="menu">
         <li><a href="#">Inicio</a></li>
         <li><a href="pages/clases.html">Clases</a></li>
@@ -24,7 +25,8 @@
         <li><a href="pages/formulario.html">Contacto</a></li>
         <li><a href="pages/blog.html" class="activo">Blog</a></li>
       </ul>
-      <button id="modoOscuroBtn" aria-label="Activar o desactivar modo oscuro">🌙</button>
+  
+      <button id="modoOscuroBtn" aria-label="Cambiar a modo oscuro">🌙</button>
     </nav>
   </header>
 
@@ -139,6 +141,17 @@
       }
     }, delay);
   });
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+
+  toggleBtn.addEventListener("click", () => {
+    menu.classList.toggle("mostrar");
+  }); 
+  document.querySelectorAll(".menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("mostrar");
+  });
+});
   </script>
 </body>
 </html>
