@@ -1248,3 +1248,98 @@ input[type="radio"][name="categoria"] {
     width: 100%;
   }
 }
+
+/*Responsividad en movil*/
+@media (max-width: 768px) {
+  /*MENÚ RESPONSIVO */
+  nav.mega-menu {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+
+  #modoOscuroBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  /*CLASES DESTACADAS */
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /*GALERÍA MASONRY */
+  .grid-masonry {
+    grid-template-columns: 1fr;
+  }
+
+  .masonry-item {
+    aspect-ratio: auto;
+  }
+
+  /*TABLA DE HORARIOS */
+  .tabla-scroll {
+    overflow-x: auto;
+  }
+
+  .tabla-scroll table {
+    min-width: 500px;
+  }
+
+  /* ENTRENADORES */
+  .contenedor-entrenadores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta-flip {
+    width: 90%;
+    height: auto;
+  }
+
+  /*PRECIOS */
+  .tabla-planes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /*FORMULARIO */
+  .formulario-contacto {
+    padding: 0 1rem;
+  }
+
+  /*BLOG */
+  .grid-blog {
+    grid-template-columns: 1fr;
+  }
+
+  /*FOOTER */
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  footer .newsletter {
+    align-items: center;
+  }
+
+  footer .redes {
+    justify-content: center;
+  }
+
+  footer .mapa iframe {
+    height: 180px;
+  }
+}
