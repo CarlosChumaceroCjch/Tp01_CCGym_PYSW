@@ -1299,20 +1299,34 @@ input[type="radio"][name="categoria"] {
   }
 
   /* ENTRENADORES */
-  .contenedor-entrenadores {
+  contenedor-entrenadores {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
   }
 
   .tarjeta-flip {
     width: 90%;
     height: auto;
+    perspective: none;
   }
 
-  /*PRECIOS */
-  .tabla-planes {
-    flex-direction: column;
-    align-items: center;
+  .flip-inner {
+    transform: none !important;
+    transition: none;
+  }
+
+  .flip-front,
+  .flip-back {
+    position: static;
+    transform: none;
+    backface-visibility: visible;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .flip-back {
+    display: none;
   }
 
   /*FORMULARIO */
