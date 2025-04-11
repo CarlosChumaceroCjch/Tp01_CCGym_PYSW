@@ -117,41 +117,48 @@
     </form>
   </footer>
   <script>
-    const btn = document.getElementById("modoOscuroBtn");
-    btn.addEventListener("click", () => {
-      document.body.classList.toggle("modo-oscuro");
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-    const num = document.querySelector(".num");
-    const inicio = +num.getAttribute("data-inicio");
-    const final = +num.getAttribute("data-final");
-    let count = inicio;
-
-    const delay = 1000;
-    const step = 7;
-
-    const interval = setInterval(() => {
-      if (count < final) {
-        count += step;
-        num.textContent = count + "+";
-      } else {
-        clearInterval(interval);
-        num.textContent = final + "+";
+    document.addEventListener("DOMContentLoaded", function () {
+      const btn = document.getElementById("modoOscuroBtn");
+      if (btn) {
+        btn.addEventListener("click", () => {
+          document.body.classList.toggle("modo-oscuro");
+        });
       }
-    }, delay);
-  });
-  const toggleBtn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-
-  toggleBtn.addEventListener("click", () => {
-    menu.classList.toggle("mostrar");
-  }); 
-  document.querySelectorAll(".menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    menu.classList.remove("mostrar");
-  });
-});
+  
+      const num = document.querySelector(".num");
+      if (num) {
+        const inicio = +num.getAttribute("data-inicio");
+        const final = +num.getAttribute("data-final");
+        let count = inicio;
+  
+        const delay = 1000;
+        const step = 7;
+  
+        const interval = setInterval(() => {
+          if (count < final) {
+            count += step;
+            num.textContent = count + "+";
+          } else {
+            clearInterval(interval);
+            num.textContent = final + "+";
+          }
+        }, delay);
+      }
+      const toggleBtn = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
+  
+      if (toggleBtn && menu) {
+        toggleBtn.addEventListener("click", () => {
+          menu.classList.toggle("mostrar");
+        });
+  
+        document.querySelectorAll(".menu a").forEach(link => {
+          link.addEventListener("click", () => {
+            menu.classList.remove("mostrar");
+          });
+        });
+      }
+    });
   </script>
 </body>
 </html>
